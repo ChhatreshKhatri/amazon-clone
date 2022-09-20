@@ -1,0 +1,4 @@
+Don't have firebase blaze so firebase functions won't work on cloud
+but functions will work when locally hosted
+amazon-clone folder ->npm run build
+amazon-clone/functions folder -> firebase emulators:start

@@ -3,10 +3,10 @@ import './Payment.css';
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import { Link, useHistory } from "react-router-dom";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { CardElement, useStripe, useElements, Elements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-import axios from './axio';
+import axios from './axios';
 import { db } from "./firebase";
 
 function Payment() {
@@ -15,6 +15,11 @@ function Payment() {
 
     const stripe = useStripe();
     const elements = useElements();
+    const randomId=(Math.floor((Math.random()*1000000)+1)).toString();
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = today.getMonth()+1;
+    var day = today.getDate();
 
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
@@ -55,11 +60,11 @@ function Payment() {
               .collection('users')
               .doc(user?.uid)
               .collection('orders')
-              .doc(paymentIntent.id)
+              .doc(randomId)
               .set({
                   basket: basket,
-                  amount: paymentIntent.amount,
-                  created: paymentIntent.created
+                  amount: getBasketTotal(basket).toString(),
+                  created: year+month+day
               })
 
             setSucceeded(true);

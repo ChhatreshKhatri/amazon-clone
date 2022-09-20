@@ -43,23 +43,27 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
         <Switch>
           <Route path='/orders'>
+            <Header />
             <Orders />
           </Route>
           <Route path='/login'>
             <Login />
           </Route>
           <Route path='/checkout'>
+            <Header />
             <Checkout />
           </Route>
           <Route path='/payment'>
+            {/* high order function */}
+            <Header />
             <Elements stripe={promise}>
             <Payment />
             </Elements>
           </Route>
           <Route path='/'>
+          <Header />``
             <Home />
           </Route>
         </Switch>
