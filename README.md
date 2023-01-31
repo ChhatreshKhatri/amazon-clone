@@ -1,5 +1,5 @@
 # Link to the website
-(Amazon-clone)[https://clone-a2550.web.app/]
+[Amazon-clone[(https://clone-a2550.web.app/)
 
 # React app
 
