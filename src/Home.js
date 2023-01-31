@@ -9,7 +9,7 @@ function Home() {
 
                 <div className="home__row">
                     {/* products row wise*/}
-                    <Product id='122200' title=' Smart Watch ' price={20} image="https://victoriaecommerce.com/wp-content/uploads/2018/05/fitbit-360-product.png" rating={5}/>
+                    <Product id='122200' title=' Smart Watch ' price={20} image="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ9HDAM8kkQcuCAhaMuohnOt8QVAmRVUO-PjfCJwS8EEmGqhJWmSkQVP7eaeFTrJOZzE84_jU-x4fc&usqp=CAc" rating={5} />
                     <Product id='122201' title=' Premium Pencil Colors ' image='https://5.imimg.com/data5/NC/IK/MY-50490048/colour-pencils-500x500.jpg' price={10} rating={3} />
                     
                 </div>
